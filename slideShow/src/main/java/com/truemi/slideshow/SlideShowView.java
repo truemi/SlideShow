@@ -13,7 +13,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.view.animation.BaseInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.truemi.slideshow.adapter.SlideAdapter;
@@ -110,16 +112,7 @@ public class SlideShowView extends RelativeLayout implements ViewPager.OnPageCha
             drawCricle(0);
         }
         initBottomTextView();
-
-        try {
-            // 通过class文件获取mScroller属性
-            Field mField = ViewPager.class.getDeclaredField("mScroller");
-            mField.setAccessible(true);
-            mScroller = new FixedSpeedScroller(viewPager.getContext(), new DecelerateInterpolator());
-            mField.set(viewPager, mScroller);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setDuration(mDuration,new DecelerateInterpolator());
     }
 
     /**
@@ -191,6 +184,23 @@ public class SlideShowView extends RelativeLayout implements ViewPager.OnPageCha
     public void setBottomTextSize(int size) {
         if (textView == null) return;
         this.textView.setTextSize(Uiutils.dp2px(context, size));
+    }
+
+    /**
+     * 设置动画时间
+     * @param mDuration 
+     */
+    public void  setDuration(int mDuration, Interpolator interpolator){
+        this.mDuration =mDuration;
+        try {
+            // 通过class文件获取mScroller属性
+            Field mField = ViewPager.class.getDeclaredField("mScroller");
+            mField.setAccessible(true);
+            mScroller = new FixedSpeedScroller(viewPager.getContext(), interpolator);
+            mField.set(viewPager, mScroller);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
