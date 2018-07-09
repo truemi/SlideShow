@@ -166,11 +166,6 @@ public class SlideShowView extends RelativeLayout implements ViewPager.OnPageCha
     }
 
 
-    public void setBottomText(String text) {
-        if (textView == null) return;
-        this.textView.setText(text);
-    }
-
     public void setBottomTextBg(int color) {
         if (textView == null) return;
         this.textView.setBackgroundColor(color);
@@ -188,7 +183,7 @@ public class SlideShowView extends RelativeLayout implements ViewPager.OnPageCha
 
     /**
      * 设置动画时间
-     * @param mDuration 
+     * @param mDuration
      */
     public void  setDuration(int mDuration, Interpolator interpolator){
         this.mDuration =mDuration;

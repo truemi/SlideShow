@@ -23,7 +23,7 @@
         app:mTextBgColor ="#44000000"
         app:mBottomTextViewHeight="40dp"
         >
-    </com.truemi.slideshow.SlideShowView>>
+    </com.truemi.slideshow.SlideShowView>
 
 
 </LinearLayout>
