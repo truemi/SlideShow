@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.truemi.slideshow.SlideShowView
+        android:id="@+id/slide_show"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:mDotRaduis="8px"
+        app:mDotNormalColor="#999999"
+        app:mDotSelectColor="#FF0000"
+        app:mDotlocation="bottom_right"
+        app:mAutoStandTime="5000"
+        app:mBottomTextView="true"
+        app:mDotNavigation="true"
+        app:mTextColor="#FFF"
+        app:mTextSize="12sp"
+        app:mTextBgColor ="#44000000"
+        app:mBottomTextViewHeight="40dp"
+        >
+    </com.truemi.slideshow.SlideShowView>>
+
+
+</LinearLayout>

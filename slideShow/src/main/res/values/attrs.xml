@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SlideShowView">
+        <attr name="mDotNavigation" format="boolean"/>
+        <attr name="mDotRaduis" format="dimension"/>
+        <attr name="mDotNormalColor" format="color"/>
+        <attr name="mDotSelectColor" format="color"/>
+        <attr name="mDotlocation" format="enum">
+            <enum name="bottom_center" value="0" />
+            <enum name="bottom_left" value="-1" />
+            <enum name="bottom_right" value="1" />
+        </attr>
+        <!--页面切换时间-->
+        <attr name="mDuration" format="integer"/>
+        <!--自动切换界面停留时间-->
+        <attr name="mAutoStandTime" format="integer"/>
+        <attr name="mBottomTextViewHeight" format="dimension"/>
+        <!--是否显示底部标题栏-->
+        <attr name="mBottomTextView" format="boolean"/>
+        <attr name="mTextSize" format="dimension"/>
+        <attr name="mTextColor" format="color"/>
+        <attr name="mTextBgColor" format="color"/>
+    </declare-styleable>
+
+</resources>
